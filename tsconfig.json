@@ -33,7 +33,7 @@
     "src/**/*.tsx",
     "src/**/*.vue",
     "tests/**/*.ts",
-    "tests/**/*.tsx"
+    "tests/**/*.tsx", "server/routes/UserRoute.js", "server/models/UserDevices.js", "server/models/Device.js", "server/routes/DeviceRoute.js"
   ],
   "exclude": [
     "node_modules"

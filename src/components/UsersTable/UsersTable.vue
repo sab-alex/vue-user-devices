@@ -1,0 +1,37 @@
+<template>
+  <div class="users-table">
+     <dx-data-grid
+            ref='table'
+            :allowColumnResizing="true"
+            :onSelectionChanged="onSelectionChanged" 
+            :data-source="dataSource"
+            :show-column-lines="true" 
+            :show-row-lines="true"
+            :show-borders="true"
+            :selectedRowKeys="selectedUsers">>
+                <dx-selection
+                    showCheckBoxesMode="always" 
+                    mode="multiple"/>
+                <dx-remote-operations 
+                    :sorting="true"/>
+                <dx-column 
+                    data-field="name"
+                    caption="Name"/>
+                <dx-column 
+                    data-field="surname"
+                     caption="Surname"/>
+                <dx-column 
+                    data-field="email"
+                    caption="EMAIL"/>
+                <dx-column 
+                    cell-template="actionsTemplate"
+                    caption="Actions"/>
+                    <actions-cell
+                        slot="actionsTemplate"
+                        slot-scope="options" 
+                        :cell-data="options.data"
+                        @onShowDevices="showDevices"/>
+        </dx-data-grid>
+  </div>
+</template>
+<script src="./UsersTable.ts" lang="ts"></script>
